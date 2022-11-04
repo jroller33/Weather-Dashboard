@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
   <link rel="stylesheet" href="./assets/style.css" />
 
@@ -13,39 +13,37 @@
 </head>
 
 <body>
-  
+
   <header>
-    <i
-        class="fa-solid has-text-black is-size-2 ml-4"
-      ></i>             
-      <h1 class="title has-text-black has-text-centered mt-5">
-        Weather Dashboard
-      </h1>
-      <i
-        class="fa-solid has-text-black is-size-2 mr-4"
-      ></i>
+    <i class="fa-solid has-text-black is-size-2 ml-4"></i>
+
+    <h1 class="title has-text-black has-text-centered mt-5">
+      Weather Dashboard
+    </h1>
+    <i class="fa-solid has-text-black is-size-2 mr-4"></i>
   </header>
 
   <form class="mt-5" id="searchCity">
-    <label for="city" class="has-text-white" >City:</label>
+
+    <label for="city" class="has-text-white">City:</label>
     <input type="text" placeholder="Type a city" id="city" />
-    <input
-      class="button is-rounded is-normal is-responsive"
-      type="submit"
-      id="chooseCity"
-      value="Please choose a city"
-    />
+    <input class="button is-rounded is-normal is-responsive" type="submit" id="chooseCity"
+      value="Please choose a city" />
   </form>
 
   <!-- need an <aside> here to show search history -->
 
-    <!-- current weather will be shown in this div -->
+  <!-- current weather will be shown in this div -->
   <div class="weatherResults has-background-white"></div>
 
   <!-- 5 day weather forecast goes here -->
   <div id="forecastDiv">
-    <h3 id="weatherForecast" class="has-text-centered subtitle is-size-2 mt-3 has-text-black">Five Day Weather Forecast</h3>
+
+    <h3 id="weatherForecast" class="has-text-centered subtitle is-size-2 mt-3 has-text-black">Five Day Weather Forecast
+    </h3>
+
     <table class="table is-fullwidth">
+
       <thead>
         <tr class="has-text-centered has-text-black">
           <th scope="col">Date</th>
@@ -55,12 +53,15 @@
           <th scope="col">Wind Speed</th>
         </tr>
       </thead>
+
+      <!-- weather forecast table will be dynamically generated here -->
+      <tbody id="weatherTable"></tbody>
     </table>
 
-
-
   </div>
+
   <script type="text/javascript" src="./assets/script.js"></script>
+
 </body>
 
 </html>
