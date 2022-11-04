@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box; 
+}
+
+header {
+    flex-wrap: wrap;
+    display: flex;
+    height: 64px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;    
+    background-color: #c58372;
+}
+
+.weatherResults {
+    float: right;
+    width: 70%;
+}
+
+aside {
+    float: left;
+    width: 20%;
+}
+
+#forecastDiv {
+    float: left;
+    width: 100%;
+}
