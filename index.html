@@ -16,16 +16,26 @@
   
   <header>
     <i
-        class="fa-temperature-arrow-down fa-solid has-text-black is-size-2 ml-4"
+        class="fa-solid has-text-black is-size-2 ml-4"
       ></i>             
       <h1 class="title has-text-black has-text-centered mt-5">
         Weather Dashboard
       </h1>
       <i
-        class="fa-temperature-arrow-up fa-solid has-text-black is-size-2 mr-4"
+        class="fa-solid has-text-black is-size-2 mr-4"
       ></i>
   </header>
 
+  <form class="mt-5" id="searchCity">
+    <label for="city" class="has-text-white" >City:</label>
+    <input type="text" placeholder="Type a city" id="city" />
+    <input
+      class="button is-rounded is-normal is-responsive"
+      type="submit"
+      id="chooseCity"
+      value="Please choose a city"
+    />
+  </form>
 
   <script type="text/javascript" src="./assets/script.js"></script>
 </body>
