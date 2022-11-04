@@ -15,12 +15,15 @@
 <body>
 
   <header>
+
     <i class="fa-solid has-text-black is-size-2 ml-4"></i>
 
     <h1 class="title has-text-black has-text-centered mt-5">
       Weather Dashboard
     </h1>
+
     <i class="fa-solid has-text-black is-size-2 mr-4"></i>
+
   </header>
 
   <form class="mt-5" id="searchCity">
@@ -28,10 +31,29 @@
     <label for="city" class="has-text-white">City:</label>
     <input type="text" placeholder="Type a city" id="city" />
     <input class="button is-rounded is-normal is-responsive" type="submit" id="chooseCity"
-      value="Please choose a city" />
+      value="Search" />
   </form>
 
   <!-- need an <aside> here to show search history -->
+  <aside>
+
+    <div class="has-background-blue ml-5 mt-4" id="searchHistory">
+
+      <h3 class="has-text-centered has-text-white">Search History</h3>
+
+    </div>
+
+    <button id="deleteHistory" class="ml-4 button is-normal is-rounded is-info">
+      Delete recent searches
+    </button>
+
+  </aside>
+
+
+
+
+
+
 
   <!-- current weather will be shown in this div -->
   <div class="weatherResults has-background-white"></div>
@@ -45,6 +67,7 @@
     <table class="table is-fullwidth">
 
       <thead>
+
         <tr class="has-text-centered has-text-black">
           <th scope="col">Date</th>
           <th scope="col">Temperature</th>
@@ -60,6 +83,9 @@
 
   </div>
 
+
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
   <script type="text/javascript" src="./assets/script.js"></script>
 
 </body>
