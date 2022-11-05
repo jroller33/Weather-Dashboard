@@ -50,7 +50,7 @@ function getForecast(lat, lon, weather, name, temp, wind, humidity) {
     let date = dayjs().format("MM/DD/YYYY")
 
   
-    let weatherInfoCurrent = `
+    let currentWeatherForecast = `
     <h2 class="subtitle has-text-centered is-size-2 has-text-black"> 
     Current Weather Conditions <img src="${weather}">
   </h2>
@@ -62,7 +62,7 @@ function getForecast(lat, lon, weather, name, temp, wind, humidity) {
       <li class="is-size-4 has-text-centered" id="uvi">UV Index:</li>
       </ul>`
       
-      weatherElement.html(weatherInfoCurrent);
+      weatherElement.html(currentWeatherForecast);
       
     
 
@@ -103,3 +103,50 @@ function getCurrentWeather(city) {
     updateSearches(city);
   });
 }
+
+function postForecast(data) {
+  $(data.daily).each(function (i) {
+
+    // loops thru each day
+    if (i < 5) {
+      let newRowForecast = $("<tr>");
+      let dateData = new Date(data.daily[i].dt * 1000);
+      let peopleDate = dateData.toLocaleDateString();
+      let currentDate = $("<td>").text(peopleDate).addClass("is-size-2");
+
+      let tempForecast = $("<td>")
+        .text(data.daily[i].temp.day + "℉")
+        .addClass("is-size-2");
+
+      let humidityForecast = $("<td>")
+        .text(data.daily[i].humidity + "%")
+        .addClass("is-size-2");
+
+      let windForecast = $("<td>")
+        .text(data.daily[i].wind_speed + "MPH")
+        .addClass("is-size-2");
+
+      newRowForecast.append(
+        currentDate,
+        tempForecast,
+        humidityForecast,
+        windForecast
+      );
+
+      $("#weatherTable").append(newRowForecast);
+    }
+  });
+}
+
+$("#chooseCity").click(function (event) {
+  event.preventDefault();
+  let userCity = $("#city").val();
+  $("#city").val("");
+  getCurrentWeather(userCity);
+});
+
+//clear local storage
+$("#clear").click(function () {
+  localStorage.clear();
+  location.reload();
+});
